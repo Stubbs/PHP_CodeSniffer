@@ -9,7 +9,7 @@
  * @author    Greg Sherwood <gsherwood@squiz.net>
  * @copyright 2006 Squiz Pty Ltd (ABN 77 084 670 600)
  * @license   http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @version   CVS: $Id$
+ * @version   CVS: $Id: CLI.php 294555 2010-02-05 04:38:30Z squiz $
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
@@ -307,6 +307,7 @@ class PHP_CodeSniffer_CLI
                                      'source',
                                      'summary',
                                      'svnblame',
+                                     'gitblame',
                                     );
 
                 if (in_array($values['report'], $validReports) === false) {
@@ -496,13 +497,13 @@ class PHP_CodeSniffer_CLI
     /**
      * Prints the error report.
      *
-     * @param PHP_CodeSniffer $phpcs        The PHP_CodeSniffer object containing
-     *                                      the errors.
-     * @param string          $report       The type of report to print.
-     * @param bool            $showSources  TRUE if report should show error sources
-     *                                      (not used by all reports).
-     * @param string          $reportFile   A file to log the report out to.
-     * @param int             $reportWidth  How wide the screen reports should be.
+     * @param PHP_CodeSniffer $phpcs       The PHP_CodeSniffer object containing
+     *                                     the errors.
+     * @param string          $report      The type of report to print.
+     * @param bool            $showSources TRUE if report should show error sources
+     *                                     (not used by all reports).
+     * @param string          $reportFile  A file to log the report out to.
+     * @param int             $reportWidth How wide the screen reports should be.
      *
      * @return int The number of error and warning messages shown.
      */
@@ -600,7 +601,8 @@ class PHP_CodeSniffer_CLI
         echo '        <generator>   The name of a doc generator to use'.PHP_EOL;
         echo '                      (forces doc generation instead of checking)'.PHP_EOL;
         echo '        <report>      Print either the "full", "xml", "checkstyle",'.PHP_EOL;
-        echo '                      "csv", "emacs", "source", "summary" or "svnblame" report'.PHP_EOL;
+        echo '                      "csv", "emacs", "source", "summary", "svnblame"'.PHP_EOL;
+        echo '                      or "gitblame" report'.PHP_EOL;
         echo '                      (the "full" report is printed by default)'.PHP_EOL;
         echo '        <reportWidth> How many columns wide screen reports should be printed'.PHP_EOL;
         echo '        <reportfile>  Write the report to the specified file path'.PHP_EOL;

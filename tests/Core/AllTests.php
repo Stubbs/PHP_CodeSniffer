@@ -10,7 +10,7 @@
  * @author    Marc McIntyre <mmcintyre@squiz.net>
  * @copyright 2006 Squiz Pty Ltd (ABN 77 084 670 600)
  * @license   http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @version   CVS: $Id$
+ * @version   CVS: $Id: AllTests.php 293440 2010-01-12 00:32:17Z squiz $
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
@@ -25,6 +25,7 @@ require_once 'Reports/CsvTest.php';
 require_once 'Reports/EmacsTest.php';
 require_once 'Reports/SourceTest.php';
 require_once 'Reports/SvnblameTest.php';
+require_once 'Reports/GitblameTest.php';
 
 if (is_file(dirname(__FILE__).'/../../CodeSniffer.php') === true) {
     // We are not installed.
@@ -83,6 +84,7 @@ class PHP_CodeSniffer_Core_AllTests
         $suite->addTestSuite('Core_Reports_EmacsTest');
         $suite->addTestSuite('Core_Reports_SourceTest');
         $suite->addTestSuite('Core_Reports_SvnblameTest');
+        $suite->addTestSuite('Core_Reports_GitblameTest');
         return $suite;
 
     }//end suite()
